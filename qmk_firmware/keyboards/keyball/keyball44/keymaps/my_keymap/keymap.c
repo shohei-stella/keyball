@@ -58,25 +58,19 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     keyball_set_scroll_mode(get_highest_layer(state) == 3);
 
     switch (biton32(layer_state)) {
-      case 0:  // レイヤー0（通常レイヤー）
-          rgblight_sethsv(183, 100, 80);  // 紫
-          break;
-      case 1:  // レイヤー1
-          rgblight_sethsv(143, 100, 80);  // 水色
-          break;
-      case 2:  // レイヤー2
-          rgblight_sethsv(43, 100, 80);  // 黄
-          break;
-      case 3:  // レイヤー3
-          rgblight_sethsv(166, 100, 80);  // 青
-          break;
-      case 4:  // レイヤー4
-          rgblight_sethsv(1, 100, 80);  //　赤
-          break;
-      default:
-          rgblight_sethsv(183, 100, 80);  // 紫
-          break;
-  }
+      case 0:
+        rgblight_sethsv(HSV_RED);
+        break;
+      case 1:
+        rgblight_sethsv(HSV_BLUE);
+        break;
+      case 2:
+        rgblight_sethsv(HSV_GREEN);
+        break;
+      case 3:
+        rgblight_sethsv(HSV_WHITE);
+        break;
+    }
 
     return state;
 }
