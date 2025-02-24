@@ -73,6 +73,9 @@ layer_state_t layer_state_set_user(layer_state_t state) {
       case 4:
         rgblight_sethsv(1, 255, 204); // 赤 
         break;
+      default:
+        rgblight_sethsv(183, 255, 204); // 紫
+        break;
     }
 
     return state;
