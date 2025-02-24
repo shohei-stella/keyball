@@ -76,16 +76,16 @@ void oledkit_render_info_user(void) {
 void rgb_matrix_indicators_user(void) {
     switch (biton32(layer_state)) {
         case 0:  // レイヤー0（通常レイヤー）
-            rgblight_sethsv(258, 85, 80);  // 紫
+            rgblight_sethsv(183, 85, 80);  // 紫
             break;
         case 1:  // レイヤー1
-            rgblight_sethsv(202, 85, 80);  // 水色
+            rgblight_sethsv(143, 85, 80);  // 水色
             break;
         case 2:  // レイヤー2
-            rgblight_sethsv(61, 85, 80);  // 黄
+            rgblight_sethsv(43, 85, 80);  // 黄
             break;
         case 3:  // レイヤー3
-            rgblight_sethsv(235, 85, 80);  // 青
+            rgblight_sethsv(166, 85, 80);  // 青
             break;
         case 4:  // レイヤー4
             rgblight_sethsv(1, 85, 80);  //　赤
