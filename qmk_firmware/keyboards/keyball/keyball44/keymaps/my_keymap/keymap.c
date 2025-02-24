@@ -57,27 +57,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     // Auto enable scroll mode when the highest layer is 3
     keyball_set_scroll_mode(get_highest_layer(state) == 3);
 
-    switch (biton32(layer_state)) {
-      case 0:
-        rgblight_sethsv(183, 255, 204); // 紫
-        break;
-      case 1:
-        rgblight_sethsv(143, 255, 204); // 水色
-        break;
-      case 2:
-        rgblight_sethsv(43, 255, 204); // 黄
-        break;
-      case 3: 
-        rgblight_sethsv(166, 255, 204); // 青
-        break;
-      case 4:
-        rgblight_sethsv(1, 255, 204); // 赤 
-        break;
-      default:
-        rgblight_sethsv(183, 255, 204); // 紫
-        break;
-    }
-
     return state;
 }
 
