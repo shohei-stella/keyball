@@ -56,6 +56,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 layer_state_t layer_state_set_user(layer_state_t state) {
     // Auto enable scroll mode when the highest layer is 3
     keyball_set_scroll_mode(get_highest_layer(state) == 3);
+
+    switch (biton32(layer_state)) {
+      case 0:  // レイヤー0（通常レイヤー）
+          rgblight_sethsv(183, 85, 80);  // 紫
+          break;
+      case 1:  // レイヤー1
+          rgblight_sethsv(143, 85, 80);  // 水色
+          break;
+      case 2:  // レイヤー2
+          rgblight_sethsv(43, 85, 80);  // 黄
+          break;
+      case 3:  // レイヤー3
+          rgblight_sethsv(166, 85, 80);  // 青
+          break;
+      case 4:  // レイヤー4
+          rgblight_sethsv(1, 85, 80);  //　赤
+          break;
+      default:
+          rgblight_sethsv(HSV_WHITE);
+          break;
+  }
+  
     return state;
 }
 
@@ -70,29 +92,3 @@ void oledkit_render_info_user(void) {
 }
 #endif
 
-#ifdef RGBLIGHT_ENABLE
-
-// レイヤーごとのLEDの色を設定する関数
-void rgb_matrix_indicators_user(void) {
-    switch (biton32(layer_state)) {
-        case 0:  // レイヤー0（通常レイヤー）
-            rgblight_sethsv(183, 85, 80);  // 紫
-            break;
-        case 1:  // レイヤー1
-            rgblight_sethsv(143, 85, 80);  // 水色
-            break;
-        case 2:  // レイヤー2
-            rgblight_sethsv(43, 85, 80);  // 黄
-            break;
-        case 3:  // レイヤー3
-            rgblight_sethsv(166, 85, 80);  // 青
-            break;
-        case 4:  // レイヤー4
-            rgblight_sethsv(1, 85, 80);  //　赤
-            break;
-        default:
-            rgblight_sethsv(HSV_WHITE);
-            break;
-    }
-}
-#endif
